@@ -24,12 +24,16 @@ export default class Counter extends Component {
     render() {
         return (
             <div  style={{textAlign:'center'}}>
-                <h2>This is a counter page</h2>
-                {this.state.count}
+                <h1>This is a counter page</h1>
+                <p>{this.state.count}</p>
                 <br />
-                <button onClick={this.increasecount}>Increase</button>
-                <button onClick={this.decresecount}>Decrease</button>
-                <button onClick={this.reset}>Reset</button>
+                <br />
+                <button class="f6 link dim br1 ph3 pv2 mb2 dib white bg-purple"
+                 onClick={this.increasecount}>Increase</button>
+                <button class="f6 link dim br1 ph3 pv2 mb2 mh5 dib white bg-light-purple"
+                onClick={this.decresecount}>Decrease</button>
+                <button class="f6 link dim br1 ph3 pv2 mb2 dib white bg-dark-pink"
+                onClick={this.reset}>Reset</button>
 
             </div>
         )

@@ -2,8 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useParams
+  Route
 } from "react-router-dom";
 import Home from './Pages/Home';
 import Slug from './Pages/Slug';
@@ -11,15 +10,23 @@ import About from './Pages/About';
 import Error from './Pages/Error';
 import Counter from './Pages/Counter'
 import HookCounter from './Pages/HookCounter';
-import Navbar from './Components/Navbar';
+import Navbars from './Component/Navbars';
 import UseEffectcounter from './Pages/UseEffectcounter';
+import RoboFriend from './containers/RoboFriend'
+import Terniary from './Pages/Terniary';
+// import Contexts from './ContextAPI/Contextapis';
+import SignIn from './Pages/SignIn';
+import AuthProvider from './ContextAPI/Auth';
 
 function App() {
   return (
-    <div>
+    <>
     {/* <h1>This is a Home Page</h1> */}
+    {/* <Contexts> */}
+    <AuthProvider>
       <Router>
-        <Navbar />
+        <Navbars />
+        
         <Switch>
         <Route exact path="/">
         <Home />
@@ -39,12 +46,24 @@ function App() {
       <Route exact path="/useeffectcounter">
         <UseEffectcounter />
       </Route>
+      <Route exact path="/robofriend">
+      <RoboFriend />
+      </Route>
+      <Route exact path="/terniary">
+      <Terniary />
+      </Route>
+      <Route exact path="/signin">
+      <SignIn />
+      </Route>
       <Route path="*">
         <Error />
       </Route>
         </Switch>
       </Router>
-    </div>
+      </AuthProvider>
+
+      {/* </Contexts> */}
+    </>
   );
 }
 
